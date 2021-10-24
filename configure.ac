@@ -192,7 +192,7 @@ else
   # env -i gives this build host configure a clean environment;
   # consequently, we have to re-initialize $PATH.
   env -i CC="$BUILD_CC" AR="$BUILD_AR" RANLIB="$BUILD_RANLIB" \
-      PATH="$PATH" \
+      PATH="$PATH" LD_LIBRARY_PATH="$LD_LIBRARY_PATH" \
       tools_only=1 \
     ${confdir}/configure --build=${build} --host=${build} \
                          --disable-rpath --disable-nls
