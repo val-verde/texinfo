@@ -178,8 +178,10 @@ AC_CANONICAL_BUILD
 #
 if test "$cross_compiling" = no; then
   native_tools=
+  AM_CONDITIONAL(CROSS_COMPILING, false)
 else
   native_tools=tools
+  AM_CONDITIONAL(CROSS_COMPILING, true)
   test -d "$native_tools" || mkdir "$native_tools"
   confdir=`(cd "$srcdir";pwd)`
   # Make sure the secondary configure won't fail with

@@ -10,8 +10,14 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+CROSS_COMPILING = @CROSS_COMPILING@
+
 # These are generated using help2man.
+if !CROSS_COMPILING
 man_MANS = install-info.1 makeinfo.1 texindex.1 texi2dvi.1
+else
+man_MANS =
+endif
 
 # These require the build in info/, thus can't do if we failed to find a
 # terminal library.
